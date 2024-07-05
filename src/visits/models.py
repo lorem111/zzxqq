@@ -4,7 +4,7 @@ from django.db import models
 
 class PageVisit(models.Model):
     # db -> table
-    # id -> prim key -> autofield
+    # id -> hidden -> prim key -> autofield
 
     path = models.TextField(blank=True, null=True) #col
     timestamp = models.DateTimeField(auto_now_add=True)
