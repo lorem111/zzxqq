@@ -166,7 +166,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # django allauth config
 LOGIN_REDIRECT_URL = "/"
-ACCOUNT_AUTHENTICATION_METHOD = "username_email"
+ACCOUNT_AUTHENTICATION_METHOD = "email"
 ACCOUNT_EMAIL_REQUIRED=True
 ACCOUNT_EMAIL_VERIFICATION="mandatory"
 ACCOUNT_EMAIL_SUBJECT_PREFIX="[Zzx site]"
@@ -182,8 +182,11 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 SOCIALACCOUNT_PROVIDERS = {
-    
+    "github": {
+        "VERIFIED_EMAIL": True
+    }   
 }
+SOCIALACCOUNT_LOGIN_ON_GET=True
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
