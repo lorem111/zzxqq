@@ -8,11 +8,18 @@
 {% block content %}
 <h1 class="text-lg font-medium">Users</h1>
 
-<div>
-{% for instance in object_list %}
-<li><a href="/profiles/{{instance.username}}">{{ instance.username }}</a></li>
-{% endfor %}
-</div>
+{% if perms.auth %}
+    {% if perms.auth.view_user %}
+    <div>
+            {% for instance in object_list %}
+            <li><b><a href="/profiles/{{instance.username}}">{{ instance.username }}</a></b></li>
+
+            {% endfor %}
+    </div>
+    {% endif %}
+    {% else %}
+    <div>You are not authorized to access users' list.</div>
+{% endif %}
     
 
 {% endblock content %}

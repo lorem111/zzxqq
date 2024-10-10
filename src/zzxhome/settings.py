@@ -69,6 +69,7 @@ INSTALLED_APPS = [
 
     #my apps
     "commando",
+    "subscriptions",
     "visits",
     "profiles",
 
